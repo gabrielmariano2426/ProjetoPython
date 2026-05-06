@@ -85,7 +85,7 @@ class UI:
         valor = float(input('Digite o valor para transferir: '))
         transferir_saldo(conta_retirar_id, conta_enviar_id, valor)
 
-    def _movimentar_dinheiro(self):   # ✅ agora dentro da classe
+    def _movimentar_dinheiro(self):   #agora dentro da classe
         print('Escolha a conta.')
         for i in listar_contas():
             print(f'{i.id} -> {i.banco} -> R$ {i.valor} -> {i.status}')
@@ -108,11 +108,11 @@ class UI:
         
         try:
             movimentar_dinheiro(historico)
-            print('✅ Movimentação realizada com sucesso!')
+            print('Movimentação realizada com sucesso!')
         except ValueError as e:
-            print(f'❌ Erro: {e}')
+            print(f'Erro: {e}')
 
-    def _total_contas(self):   # ✅ agora dentro da classe
+    def _total_contas(self):   #agora dentro da classe
         print(f'R$ {total_contas()}')
 
     def _filtrar_movimentacoes(self):
