@@ -49,11 +49,11 @@ def movimentar_dinheiro(historico: Historico):
         statement = select(Conta).where(Conta.id == historico.conta_id)
         conta = session.exec(statement).first()
 
-        # ✅ Verifica se a conta existe
+        #Verifica se a conta existe
         if not conta:
             raise ValueError("Conta não encontrada!")
 
-        # ✅ Verifica se a conta está ativa
+        #Verifica se a conta está ativa
         if conta.status == Status.INATIVO.value:
             raise ValueError("Não é possível movimentar uma conta inativa!")
 
@@ -233,4 +233,4 @@ def exportar_excel():
         ws_hist.column_dimensions[col_letter].width = width
 
     wb.save('relatorio.xlsx')
-    print('✅ Arquivo relatorio.xlsx gerado com sucesso!')
+    print('Arquivo relatorio.xlsx gerado com sucesso!')
